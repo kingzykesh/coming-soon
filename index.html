@@ -28,6 +28,20 @@
       to { opacity: 1; transform: scale(1) rotate(0); }
     }
   </style>
+
+  <!-- Primary Meta Tags -->
+  <title>OME Firm | Coming Soon - Apparel, Music, Real Estate & Crypto</title>
+  <meta name="description" content="OME Firm is launching soon with innovative ventures in apparel, music, real estate, and cryptocurrency exchange. Join our countdown to launch!">
+  <meta name="keywords" content="OME Firm, OME Apparel, OMEE Records, OME Homes, cryptocurrency, coming soon">
+  <meta name="author" content="OME Firm">
+
+   <!-- Open Graph / Facebook Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://omefirm.com/">
+  <meta property="og:title" content="OME Firm | Coming Soon - Multiple Ventures Launching">
+  <meta property="og:description" content="Innovative ventures in apparel, music, real estate, and cryptocurrency exchange. Launching soon!">
+  <meta property="og:image" content="https://ome-firm.netlify.app/logo.jpg">
+   <link rel="icon" type="image/png" href="logo.jpg">
 </head>
 <body class="bg-gradient-to-br from-green-50 to-orange-50 min-h-screen flex items-center justify-center p-4">
   <div class="max-w-4xl w-full bg-white rounded-2xl shadow-xl overflow-hidden">
@@ -146,13 +160,14 @@
     </div>
   </div>
 
+  
   <script>
     // Set current year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Countdown timer
+    // Countdown timer (10 days from now)
     const countDownDate = new Date();
-    countDownDate.setDate(countDownDate.getDate() + 21);
+    countDownDate.setDate(countDownDate.getDate() + 10);
 
     const updateCountdown = function() {
       const now = new Date().getTime();
@@ -169,17 +184,19 @@
       document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
       document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
       
-      // Add animation to seconds every second
-      const secondsElement = document.getElementById("seconds");
-      secondsElement.classList.remove("animate-pulse-slow");
-      void secondsElement.offsetWidth; // Trigger reflow
-      secondsElement.classList.add("animate-pulse-slow");
+      // Special animation when days change
+      if(seconds === 0) {
+        document.getElementById("days").classList.add("animate-bounce");
+        setTimeout(() => {
+          document.getElementById("days").classList.remove("animate-bounce");
+        }, 2000);
+      }
       
       if (distance < 0) {
         clearInterval(x);
         document.getElementById("countdown").innerHTML = `
-          <div class="text-3xl font-bold text-green-600 animate-bounce">
-            LAUNCHED! 🎉
+          <div class="text-4xl font-bold text-green-600 animate-bounce">
+            WE'RE LIVE! 🎉
           </div>
         `;
       }
