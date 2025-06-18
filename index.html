@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OME Firm - Coming Soon</title>
+  <title>OME Firm - Official Launch July 1st</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @keyframes pulse {
@@ -14,11 +14,18 @@
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
     }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
     .animate-pulse-slow {
       animation: pulse 3s infinite;
     }
     .animate-float {
       animation: float 4s ease-in-out infinite;
+    }
+    .animate-bounce {
+      animation: bounce 2s ease-in-out infinite;
     }
     .logo-enter {
       animation: logoEnter 1s ease-out forwards;
@@ -28,32 +35,18 @@
       to { opacity: 1; transform: scale(1) rotate(0); }
     }
   </style>
-
-  <!-- Primary Meta Tags -->
-  <title>OME Firm | Coming Soon - Apparel, Music, Real Estate & Crypto</title>
-  <meta name="description" content="OME Firm is launching soon with innovative ventures in apparel, music, real estate, and cryptocurrency exchange. Join our countdown to launch!">
-  <meta name="keywords" content="OME Firm, OME Apparel, OMEE Records, OME Homes, cryptocurrency, coming soon">
-  <meta name="author" content="OME Firm">
-
-   <!-- Open Graph / Facebook Meta Tags -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://omefirm.com/">
-  <meta property="og:title" content="OME Firm | Coming Soon - Multiple Ventures Launching">
-  <meta property="og:description" content="Innovative ventures in apparel, music, real estate, and cryptocurrency exchange. Launching soon!">
-  <meta property="og:image" content="https://ome-firm.netlify.app/logo.jpg">
-   <link rel="icon" type="image/png" href="logo.jpg">
 </head>
 <body class="bg-gradient-to-br from-green-50 to-orange-50 min-h-screen flex items-center justify-center p-4">
   <div class="max-w-4xl w-full bg-white rounded-2xl shadow-xl overflow-hidden">
     <!-- Logo Section -->
     <div class="flex justify-center pt-8">
       <div class="logo-enter">
-        <!-- Replace with your actual logo (SVG or img tag) -->
-      <!--  <div class="w-32 h-32 md:w-40 md:h-40 bg-gradient-to-r from-green-500 to-orange-400 rounded-full flex items-center justify-center text-white font-bold text-2xl shadow-lg animate-float">
+        <!-- Replace with your actual logo -->
+    <!--    <div class="w-32 h-32 md:w-40 md:h-40 bg-gradient-to-r from-green-500 to-orange-400 rounded-full flex items-center justify-center text-white font-bold text-2xl shadow-lg animate-float">
           OME
         </div>-->
-        <!-- Alternative if you have an image: -->
-        <img src="logo.jpg" alt="OME Firm Logo" class="w-32 h-32 md:w-40 md:h-40 object-contain animate-float"> 
+
+        <img src="logo.jpg" alt="OME Firm Logo" class="w-32 h-32 md:w-40 md:h-40 object-contain animate-float">
       </div>
     </div>
 
@@ -64,16 +57,16 @@
           OME Firm
         </h1>
         <p class="text-lg md:text-xl text-gray-700">
-          We're building something amazing! Our ventures will launch soon.
+          Official launch on <span class="font-bold text-green-600">July 1st</span>! Get ready for our grand opening.
         </p>
       </div>
 
-      <!-- Countdown Timer -->
+      <!-- Countdown Timer (Set to July 1st) -->
       <div class="flex justify-center mb-12" id="countdown">
         <!-- Days -->
         <div class="flex flex-col items-center mx-2 transform hover:scale-110 transition-transform duration-300">
-          <div class="text-4xl md:text-6xl font-bold text-white bg-green-600 px-4 py-2 rounded-lg shadow-md" id="days">
-            21
+          <div class="text-4xl md:text-6xl font-bold text-white bg-green-600 px-4 py-2 rounded-lg shadow-md animate-bounce" id="days">
+            --
           </div>
           <div class="text-lg md:text-xl mt-2 text-orange-500 font-semibold">
             DAYS
@@ -83,7 +76,7 @@
         <!-- Hours -->
         <div class="flex flex-col items-center mx-2 transform hover:scale-110 transition-transform duration-300" style="transition-delay: 50ms">
           <div class="text-4xl md:text-6xl font-bold text-white bg-green-600 px-4 py-2 rounded-lg shadow-md" id="hours">
-            00
+            --
           </div>
           <div class="text-lg md:text-xl mt-2 text-orange-500 font-semibold">
             HOURS
@@ -93,7 +86,7 @@
         <!-- Minutes -->
         <div class="flex flex-col items-center mx-2 transform hover:scale-110 transition-transform duration-300" style="transition-delay: 100ms">
           <div class="text-4xl md:text-6xl font-bold text-white bg-green-600 px-4 py-2 rounded-lg shadow-md" id="minutes">
-            00
+            --
           </div>
           <div class="text-lg md:text-xl mt-2 text-orange-500 font-semibold">
             MINUTES
@@ -103,7 +96,7 @@
         <!-- Seconds -->
         <div class="flex flex-col items-center mx-2 transform hover:scale-110 transition-transform duration-300" style="transition-delay: 150ms">
           <div class="text-4xl md:text-6xl font-bold text-white bg-green-600 px-4 py-2 rounded-lg shadow-md animate-pulse-slow" id="seconds">
-            00
+            --
           </div>
           <div class="text-lg md:text-xl mt-2 text-orange-500 font-semibold">
             SECONDS
@@ -116,31 +109,31 @@
         <!-- Apparel -->
         <div class="p-4 border-l-4 border-green-500 bg-green-50 rounded-r-lg transform hover:scale-105 transition-transform duration-300 hover:shadow-md">
           <h3 class="text-xl font-semibold text-green-700">OME Apparel</h3>
-          <p class="text-gray-600">Fashion that defines your personality</p>
+          <p class="text-gray-600">Launching July 1st</p>
         </div>
         
         <!-- Record Label -->
         <div class="p-4 border-l-4 border-orange-500 bg-orange-50 rounded-r-lg transform hover:scale-105 transition-transform duration-300 hover:shadow-md">
           <h3 class="text-xl font-semibold text-orange-700">OMEE Record Label</h3>
-          <p class="text-gray-600">Discover the next wave of musical talent</p>
+          <p class="text-gray-600">Launching July 1st</p>
         </div>
         
         <!-- Homes -->
         <div class="p-4 border-l-4 border-green-500 bg-green-50 rounded-r-lg transform hover:scale-105 transition-transform duration-300 hover:shadow-md">
           <h3 class="text-xl font-semibold text-green-700">OME Homes</h3>
-          <p class="text-gray-600">Premium real estate solutions</p>
+          <p class="text-gray-600">Launching July 1st</p>
         </div>
         
         <!-- Crypto -->
         <div class="p-4 border-l-4 border-orange-500 bg-orange-50 rounded-r-lg transform hover:scale-105 transition-transform duration-300 hover:shadow-md">
           <h3 class="text-xl font-semibold text-orange-700">Crypto & Gift Cards</h3>
-          <p class="text-gray-600">Secure exchange platform</p>
+          <p class="text-gray-600">Launching July 1st</p>
         </div>
       </div>
 
       <!-- Email Signup -->
       <div class="text-center">
-        <p class="text-gray-600 mb-4">Stay updated with our launch</p>
+        <p class="text-gray-600 mb-4">Join our exclusive launch list</p>
         <div class="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
           <input 
             type="email" 
@@ -148,7 +141,7 @@
             class="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 flex-grow"
           >
           <button class="px-6 py-2 bg-gradient-to-r from-green-600 to-orange-500 text-white rounded-lg font-semibold hover:opacity-90 transition-opacity shadow-md transform hover:scale-105 duration-200">
-            Notify Me
+            Get Early Access
           </button>
         </div>
       </div>
@@ -156,18 +149,23 @@
 
     <!-- Footer -->
     <div class="bg-gradient-to-r from-green-600 to-orange-500 p-4 text-center text-white">
-      <p>© <span id="year"></span> OME Firm. All rights reserved.</p>
+      <p>© <span id="year"></span> OME Firm. Launching July 1st.</p>
     </div>
   </div>
 
-  
   <script>
     // Set current year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Countdown timer (10 days from now)
+    // Countdown timer (July 1st of current year)
     const countDownDate = new Date();
-    countDownDate.setDate(countDownDate.getDate() + 15);
+    countDownDate.setMonth(6, 1); // July 1st (month is 0-indexed)
+    countDownDate.setHours(0, 0, 0, 0); // Set to midnight
+
+    // If July 1st has already passed this year, set for next year
+    if (countDownDate < new Date()) {
+      countDownDate.setFullYear(countDownDate.getFullYear() + 1);
+    }
 
     const updateCountdown = function() {
       const now = new Date().getTime();
@@ -199,6 +197,9 @@
             WE'RE LIVE! 🎉
           </div>
         `;
+        document.querySelectorAll('.text-gray-600').forEach(el => {
+          el.textContent = "Now Available!";
+        });
       }
     };
 
