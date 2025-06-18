@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OME Firm - Coming Soon</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
+  <style>
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    .animate-pulse-slow {
+      animation: pulse 3s infinite;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-green-50 to-orange-50 min-h-screen flex items-center justify-center p-4">
+  <div class="max-w-4xl w-full bg-white rounded-2xl shadow-xl overflow-hidden animate-fade-in">
+    <div class="p-8 md:p-12">
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-orange-500 animate-fade-in">
+          OME Firm
+        </h1>
+        <p class="text-lg md:text-xl text-gray-700">
+          We're building something amazing! Our ventures will launch soon.
+        </p>
+      </div>
+
+      <!-- Countdown Timer -->
+      <div class="flex justify-center mb-12" id="countdown">
+        <!-- Days -->
+        <div class="flex flex-col items-center mx-2 animate-bounce-in">
+          <div class="text-4xl md:text-6xl font-bold text-white bg-green-600 px-4 py-2 rounded-lg" id="days">
+            21
+          </div>
+          <div class="text-lg md:text-xl mt-2 text-orange-500 font-semibold">
+            DAYS
+          </div>
+        </div>
+        
+        <!-- Hours -->
+        <div class="flex flex-col items-center mx-2 animate-bounce-in" style="animation-delay: 0.2s">
+          <div class="text-4xl md:text-6xl font-bold text-white bg-green-600 px-4 py-2 rounded-lg" id="hours">
+            00
+          </div>
+          <div class="text-lg md:text-xl mt-2 text-orange-500 font-semibold">
+            HOURS
+          </div>
+        </div>
+        
+        <!-- Minutes -->
+        <div class="flex flex-col items-center mx-2 animate-bounce-in" style="animation-delay: 0.4s">
+          <div class="text-4xl md:text-6xl font-bold text-white bg-green-600 px-4 py-2 rounded-lg" id="minutes">
+            00
+          </div>
+          <div class="text-lg md:text-xl mt-2 text-orange-500 font-semibold">
+            MINUTES
+          </div>
+        </div>
+        
+        <!-- Seconds -->
+        <div class="flex flex-col items-center mx-2 animate-bounce-in" style="animation-delay: 0.6s">
+          <div class="text-4xl md:text-6xl font-bold text-white bg-green-600 px-4 py-2 rounded-lg animate-pulse-slow" id="seconds">
+            00
+          </div>
+          <div class="text-lg md:text-xl mt-2 text-orange-500 font-semibold">
+            SECONDS
+          </div>
+        </div>
+      </div>
+
+      <!-- Ventures Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <!-- Apparel -->
+        <div class="p-4 border-l-4 border-green-500 bg-green-50 rounded-r-lg transform hover:scale-105 transition-transform duration-300">
+          <h3 class="text-xl font-semibold text-green-700">OME Apparel</h3>
+          <p class="text-gray-600">Fashion that defines your personality</p>
+        </div>
+        
+        <!-- Record Label -->
+        <div class="p-4 border-l-4 border-orange-500 bg-orange-50 rounded-r-lg transform hover:scale-105 transition-transform duration-300">
+          <h3 class="text-xl font-semibold text-orange-700">OMEE Record Label</h3>
+          <p class="text-gray-600">Discover the next wave of musical talent</p>
+        </div>
+        
+        <!-- Homes -->
+        <div class="p-4 border-l-4 border-green-500 bg-green-50 rounded-r-lg transform hover:scale-105 transition-transform duration-300">
+          <h3 class="text-xl font-semibold text-green-700">OME Homes</h3>
+          <p class="text-gray-600">Premium real estate solutions</p>
+        </div>
+        
+        <!-- Crypto -->
+        <div class="p-4 border-l-4 border-orange-500 bg-orange-50 rounded-r-lg transform hover:scale-105 transition-transform duration-300">
+          <h3 class="text-xl font-semibold text-orange-700">Crypto & Gift Cards</h3>
+          <p class="text-gray-600">Secure exchange platform</p>
+        </div>
+      </div>
+
+      <!-- Email Signup -->
+      <div class="text-center">
+        <p class="text-gray-600 mb-4">Stay updated with our launch</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <form action="https://formsubmit.co/ezirimchukwuebuka24@gmail.com" method="POST"></form>
+          <input 
+            type="email"  name="email"
+            placeholder="Your email address" 
+            class="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 flex-grow max-w-md"
+          >
+          <button class="px-6 py-2 bg-gradient-to-r from-green-600 to-orange-500 text-white rounded-lg font-semibold hover:opacity-90 transition-opacity shadow-md transform hover:scale-105 duration-200">
+            Notify Me
+          </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="bg-gradient-to-r from-green-600 to-orange-500 p-4 text-center text-white">
+      <p>© <span id="year"></span> OME Firm. All rights reserved.</p>
+    </div>
+  </div>
+
+  <script>
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Countdown timer
+    const countDownDate = new Date();
+    countDownDate.setDate(countDownDate.getDate() + 21);
+
+    const x = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+      
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+      // Display with leading zeros
+      document.getElementById("days").textContent = days.toString().padStart(2, '0');
+      document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
+      document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
+      document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
+      
+      // Animation effects
+      if(seconds % 5 === 0) {
+        document.getElementById("seconds").classList.add("animate-pulse");
+        setTimeout(() => {
+          document.getElementById("seconds").classList.remove("animate-pulse");
+        }, 1000);
+      }
+      
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "<div class='text-3xl font-bold text-green-600'>LAUNCHED!</div>";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
