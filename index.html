@@ -5,23 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OME Firm - Coming Soon</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
   <style>
     @keyframes pulse {
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.05); }
     }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
     .animate-pulse-slow {
       animation: pulse 3s infinite;
+    }
+    .animate-float {
+      animation: float 4s ease-in-out infinite;
+    }
+    .logo-enter {
+      animation: logoEnter 1s ease-out forwards;
+    }
+    @keyframes logoEnter {
+      from { opacity: 0; transform: scale(0.5) rotate(-15deg); }
+      to { opacity: 1; transform: scale(1) rotate(0); }
     }
   </style>
 </head>
 <body class="bg-gradient-to-br from-green-50 to-orange-50 min-h-screen flex items-center justify-center p-4">
-  <div class="max-w-4xl w-full bg-white rounded-2xl shadow-xl overflow-hidden animate-fade-in">
+  <div class="max-w-4xl w-full bg-white rounded-2xl shadow-xl overflow-hidden">
+    <!-- Logo Section -->
+    <div class="flex justify-center pt-8">
+      <div class="logo-enter">
+        <!-- Replace with your actual logo (SVG or img tag) -->
+      <!--  <div class="w-32 h-32 md:w-40 md:h-40 bg-gradient-to-r from-green-500 to-orange-400 rounded-full flex items-center justify-center text-white font-bold text-2xl shadow-lg animate-float">
+          OME
+        </div>-->
+        <!-- Alternative if you have an image: -->
+        <img src="logo.jpg" alt="OME Firm Logo" class="w-32 h-32 md:w-40 md:h-40 object-contain animate-float"> 
+      </div>
+    </div>
+
     <div class="p-8 md:p-12">
       <!-- Header -->
       <div class="text-center mb-12">
-        <h1 class="text-4xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-orange-500 animate-fade-in">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-orange-500">
           OME Firm
         </h1>
         <p class="text-lg md:text-xl text-gray-700">
@@ -32,8 +57,8 @@
       <!-- Countdown Timer -->
       <div class="flex justify-center mb-12" id="countdown">
         <!-- Days -->
-        <div class="flex flex-col items-center mx-2 animate-bounce-in">
-          <div class="text-4xl md:text-6xl font-bold text-white bg-green-600 px-4 py-2 rounded-lg" id="days">
+        <div class="flex flex-col items-center mx-2 transform hover:scale-110 transition-transform duration-300">
+          <div class="text-4xl md:text-6xl font-bold text-white bg-green-600 px-4 py-2 rounded-lg shadow-md" id="days">
             21
           </div>
           <div class="text-lg md:text-xl mt-2 text-orange-500 font-semibold">
@@ -42,8 +67,8 @@
         </div>
         
         <!-- Hours -->
-        <div class="flex flex-col items-center mx-2 animate-bounce-in" style="animation-delay: 0.2s">
-          <div class="text-4xl md:text-6xl font-bold text-white bg-green-600 px-4 py-2 rounded-lg" id="hours">
+        <div class="flex flex-col items-center mx-2 transform hover:scale-110 transition-transform duration-300" style="transition-delay: 50ms">
+          <div class="text-4xl md:text-6xl font-bold text-white bg-green-600 px-4 py-2 rounded-lg shadow-md" id="hours">
             00
           </div>
           <div class="text-lg md:text-xl mt-2 text-orange-500 font-semibold">
@@ -52,8 +77,8 @@
         </div>
         
         <!-- Minutes -->
-        <div class="flex flex-col items-center mx-2 animate-bounce-in" style="animation-delay: 0.4s">
-          <div class="text-4xl md:text-6xl font-bold text-white bg-green-600 px-4 py-2 rounded-lg" id="minutes">
+        <div class="flex flex-col items-center mx-2 transform hover:scale-110 transition-transform duration-300" style="transition-delay: 100ms">
+          <div class="text-4xl md:text-6xl font-bold text-white bg-green-600 px-4 py-2 rounded-lg shadow-md" id="minutes">
             00
           </div>
           <div class="text-lg md:text-xl mt-2 text-orange-500 font-semibold">
@@ -62,8 +87,8 @@
         </div>
         
         <!-- Seconds -->
-        <div class="flex flex-col items-center mx-2 animate-bounce-in" style="animation-delay: 0.6s">
-          <div class="text-4xl md:text-6xl font-bold text-white bg-green-600 px-4 py-2 rounded-lg animate-pulse-slow" id="seconds">
+        <div class="flex flex-col items-center mx-2 transform hover:scale-110 transition-transform duration-300" style="transition-delay: 150ms">
+          <div class="text-4xl md:text-6xl font-bold text-white bg-green-600 px-4 py-2 rounded-lg shadow-md animate-pulse-slow" id="seconds">
             00
           </div>
           <div class="text-lg md:text-xl mt-2 text-orange-500 font-semibold">
@@ -75,25 +100,25 @@
       <!-- Ventures Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
         <!-- Apparel -->
-        <div class="p-4 border-l-4 border-green-500 bg-green-50 rounded-r-lg transform hover:scale-105 transition-transform duration-300">
+        <div class="p-4 border-l-4 border-green-500 bg-green-50 rounded-r-lg transform hover:scale-105 transition-transform duration-300 hover:shadow-md">
           <h3 class="text-xl font-semibold text-green-700">OME Apparel</h3>
           <p class="text-gray-600">Fashion that defines your personality</p>
         </div>
         
         <!-- Record Label -->
-        <div class="p-4 border-l-4 border-orange-500 bg-orange-50 rounded-r-lg transform hover:scale-105 transition-transform duration-300">
+        <div class="p-4 border-l-4 border-orange-500 bg-orange-50 rounded-r-lg transform hover:scale-105 transition-transform duration-300 hover:shadow-md">
           <h3 class="text-xl font-semibold text-orange-700">OMEE Record Label</h3>
           <p class="text-gray-600">Discover the next wave of musical talent</p>
         </div>
         
         <!-- Homes -->
-        <div class="p-4 border-l-4 border-green-500 bg-green-50 rounded-r-lg transform hover:scale-105 transition-transform duration-300">
+        <div class="p-4 border-l-4 border-green-500 bg-green-50 rounded-r-lg transform hover:scale-105 transition-transform duration-300 hover:shadow-md">
           <h3 class="text-xl font-semibold text-green-700">OME Homes</h3>
           <p class="text-gray-600">Premium real estate solutions</p>
         </div>
         
         <!-- Crypto -->
-        <div class="p-4 border-l-4 border-orange-500 bg-orange-50 rounded-r-lg transform hover:scale-105 transition-transform duration-300">
+        <div class="p-4 border-l-4 border-orange-500 bg-orange-50 rounded-r-lg transform hover:scale-105 transition-transform duration-300 hover:shadow-md">
           <h3 class="text-xl font-semibold text-orange-700">Crypto & Gift Cards</h3>
           <p class="text-gray-600">Secure exchange platform</p>
         </div>
@@ -102,17 +127,15 @@
       <!-- Email Signup -->
       <div class="text-center">
         <p class="text-gray-600 mb-4">Stay updated with our launch</p>
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <form action="https://formsubmit.co/ezirimchukwuebuka24@gmail.com" method="POST"></form>
+        <div class="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
           <input 
-            type="email"  name="email"
+            type="email" 
             placeholder="Your email address" 
-            class="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 flex-grow max-w-md"
+            class="px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 flex-grow"
           >
           <button class="px-6 py-2 bg-gradient-to-r from-green-600 to-orange-500 text-white rounded-lg font-semibold hover:opacity-90 transition-opacity shadow-md transform hover:scale-105 duration-200">
             Notify Me
           </button>
-          </form>
         </div>
       </div>
     </div>
@@ -131,7 +154,7 @@
     const countDownDate = new Date();
     countDownDate.setDate(countDownDate.getDate() + 21);
 
-    const x = setInterval(function() {
+    const updateCountdown = function() {
       const now = new Date().getTime();
       const distance = countDownDate - now;
       
@@ -146,19 +169,27 @@
       document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
       document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
       
-      // Animation effects
-      if(seconds % 5 === 0) {
-        document.getElementById("seconds").classList.add("animate-pulse");
-        setTimeout(() => {
-          document.getElementById("seconds").classList.remove("animate-pulse");
-        }, 1000);
-      }
+      // Add animation to seconds every second
+      const secondsElement = document.getElementById("seconds");
+      secondsElement.classList.remove("animate-pulse-slow");
+      void secondsElement.offsetWidth; // Trigger reflow
+      secondsElement.classList.add("animate-pulse-slow");
       
       if (distance < 0) {
         clearInterval(x);
-        document.getElementById("countdown").innerHTML = "<div class='text-3xl font-bold text-green-600'>LAUNCHED!</div>";
+        document.getElementById("countdown").innerHTML = `
+          <div class="text-3xl font-bold text-green-600 animate-bounce">
+            LAUNCHED! 🎉
+          </div>
+        `;
       }
-    }, 1000);
+    };
+
+    // Initial call
+    updateCountdown();
+    
+    // Update every second
+    const x = setInterval(updateCountdown, 1000);
   </script>
 </body>
 </html>
